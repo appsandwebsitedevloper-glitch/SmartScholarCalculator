@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SmartScholar Calculator — All-in-one educational tool for scholarship exam aspirants. Calculators, formulas, tricks, and IQ training.">
+  <meta name="theme-color" content="#0A0A0F">
+  <title>SmartScholar Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ============================================
+       APP SHELL
+       ============================================ -->
+  <main id="app">
+
+    <!-- ============================================
+         SPLASH SCREEN
+         ============================================ -->
+    <section id="page-splash" class="page page-active">
+      <div class="splash-center">
+        <div class="splash-logo-ring">
+          <svg class="splash-icon" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+            <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/>
+          </svg>
+        </div>
+        <h1 class="splash-title">SmartScholar</h1>
+        <p class="splash-subtitle">CALCULATOR</p>
+        <div class="splash-loader"><div class="splash-loader-fill"></div></div>
+        <p class="splash-tagline">MADE FOR SCHOLARSHIP STUDENTS</p>
+      </div>
+    </section>
+
+    <!-- ============================================
+         HOME SCREEN
+         ============================================ -->
+    <section id="page-home" class="page">
+      <div class="page-inner">
+        <div class="home-welcome">
+          <p class="home-greeting">WELCOME BACK, SCHOLAR</p>
+          <h1 class="home-heading">What will you<br>learn today?</h1>
+        </div>
+
+        <div class="home-quick-action">
+          <div class="quick-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/>
+            </svg>
+          </div>
+          <div class="quick-text">
+            <p class="quick-title">Scholar Tool</p>
+            <p class="quick-sub">5-step formula solver</p>
+          </div>
+          <button class="quick-btn" data-nav="scholar-tool">Start →</button>
+        </div>
+
+        <div class="module-grid">
+          <!-- Row 1 -->
+          <button class="module-card" data-nav="calculator" style="--accent:#A78BFA;--glow:rgba(167,139,250,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(167,139,250,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="16" y1="14" x2="16" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/><line x1="16" y1="18" x2="16" y2="18.01"/></svg>
+            </div>
+            <p class="module-name">Calculator</p>
+            <p class="module-sub">Basic</p>
+          </button>
+
+          <button class="module-card" data-nav="scientific" style="--accent:#60A5FA;--glow:rgba(96,165,250,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(96,165,250,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 2v7.31"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></svg>
+            </div>
+            <p class="module-name">Scientific</p>
+            <p class="module-sub">Advanced</p>
+          </button>
+
+          <button class="module-card" data-nav="converter" style="--accent:#22D3EE;--glow:rgba(34,211,238,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(34,211,238,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10h14l-4-4"/><path d="M17 14H3l4 4"/></svg>
+            </div>
+            <p class="module-name">Converter</p>
+            <p class="module-sub">Units</p>
+          </button>
+
+          <button class="module-card" data-nav="scholar-tool" style="--accent:#FF8A3D;--glow:rgba(255,138,61,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(255,138,61,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+            </div>
+            <p class="module-name">Scholar Tool</p>
+            <p class="module-sub">5 Steps</p>
+          </button>
+
+          <button class="module-card" data-nav="formulas" style="--accent:#F472B6;--glow:rgba(244,114,182,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(244,114,182,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            </div>
+            <p class="module-name">Formulas</p>
+            <p class="module-sub">All Topics</p>
+          </button>
+
+          <button class="module-card" data-nav="tricks" style="--accent:#FBBF24;--glow:rgba(251,191,36,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(251,191,36,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <p class="module-name">Short Tricks</p>
+            <p class="module-sub">Save Time</p>
+          </button>
+
+          <button class="module-card" data-nav="practice" style="--accent:#34D399;--glow:rgba(52,211,153,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(52,211,153,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <p class="module-name">Practice</p>
+            <p class="module-sub">MCQ Quiz</p>
+          </button>
+
+          <button class="module-card" data-nav="buddhimatta" style="--accent:#F472B6;--glow:rgba(244,114,182,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(244,114,182,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
+            </div>
+            <p class="module-name">BuddhiMatta</p>
+            <p class="module-sub">IQ Training</p>
+          </button>
+
+          <button class="module-card" data-nav="squares-cubes" style="--accent:#A78BFA;--glow:rgba(167,139,250,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(167,139,250,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="9" x2="20" y2="9"/><line x1="4" y1="15" x2="20" y2="15"/><line x1="10" y1="3" x2="8" y2="21"/><line x1="16" y1="3" x2="14" y2="21"/></svg>
+            </div>
+            <p class="module-name">Squares & Cubes</p>
+            <p class="module-sub">Reference</p>
+          </button>
+
+          <button class="module-card" data-nav="gk-revision" style="--accent:#FF8A3D;--glow:rgba(255,138,61,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(255,138,61,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <p class="module-name">GK Revision</p>
+            <p class="module-sub">Important Days</p>
+          </button>
+
+          <button class="module-card" data-nav="memory-tricks" style="--accent:#F472B6;--glow:rgba(244,114,182,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(244,114,182,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+            </div>
+            <p class="module-name">Memory Tricks</p>
+            <p class="module-sub">Mnemonics</p>
+          </button>
+
+          <button class="module-card" data-nav="fast-revision" style="--accent:#60A5FA;--glow:rgba(96,165,250,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(96,165,250,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h12a2 2 0 0 0 2-2v-2H10v2a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v3h4"/><path d="M19 17V5a2 2 0 0 0-2-2H4"/></svg>
+            </div>
+            <p class="module-name">Fast Revision</p>
+            <p class="module-sub">Quick View</p>
+          </button>
+
+          <button class="module-card" data-nav="settings" style="--accent:#34D399;--glow:rgba(52,211,153,0.25)">
+            <div class="module-icon-wrap" style="background:rgba(52,211,153,0.14)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <p class="module-name">Settings</p>
+            <p class="module-sub">Preferences</p>
+          </button>
+        </div>
+
+        <!-- NEW FEATURES SECTION -->
+        <div style="margin-top:32px;border-top:1px solid #2A2A33;padding-top:24px">
+          <p style="font-size:12px;font-weight:700;color:#7A7A88;text-transform:uppercase;margin-bottom:12px">Learning Tools</p>
+          <div class="module-grid">
+            <button class="module-card" data-nav="progress-dashboard" style="--accent:#22D3EE;--glow:rgba(34,211,238,0.25)">
+              <div class="module-icon-wrap" style="background:rgba(34,211,238,0.14)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <p class="module-name">Progress</p>
+              <p class="module-sub">Dashboard</p>
+            </button>
+
+            <button class="module-card" data-nav="daily-challenge" style="--accent:#FBBF24;--glow:rgba(251,191,36,0.25)">
+              <div class="module-icon-wrap" style="background:rgba(251,191,36,0.14)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <p class="module-name">Daily Challenge</p>
+              <p class="module-sub">Streak</p>
+            </button>
+
+            <button class="module-card" data-nav="weak-topics" style="--accent:#F87171;--glow:rgba(248,113,113,0.25)">
+              <div class="module-icon-wrap" style="background:rgba(248,113,113,0.14)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#F87171" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3.05h16.94a2 2 0 0 0 1.71-3.05L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              </div>
+              <p class="module-name">Weak Topics</p>
+              <p class="module-sub">Analysis</p>
+            </button>
+
+            <button class="module-card" data-nav="exam-mode" style="--accent:#60A5FA;--glow:rgba(96,165,250,0.25)">
+              <div class="module-icon-wrap" style="background:rgba(96,165,250,0.14)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <p class="module-name">Exam Mode</p>
+              <p class="module-sub">Test</p>
+            </button>
+
+            <button class="module-card" data-nav="question-generator" style="--accent:#A78BFA;--glow:rgba(167,139,250,0.25)">
+              <div class="module-icon-wrap" style="background:rgba(167,139,250,0.14)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+              </div>
+              <p class="module-name">Generator</p>
+              <p class="module-sub">Questions</p>
+            </button>
+
+            <button class="module-card" data-nav="mistake-book" style="--accent:#F472B6;--glow:rgba(244,114,182,0.25)">
+              <div class="module-icon-wrap" style="background:rgba(244,114,182,0.14)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#F472B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </div>
+              <p class="module-name">Mistakes</p>
+              <p class="module-sub">Book</p>
+            </button>
+
+            <button class="module-card" data-nav="speed-test" style="--accent:#FF8A3D;--glow:rgba(255,138,61,0.25)">
+              <div class="module-icon-wrap" style="background:rgba(255,138,61,0.14)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FF8A3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 3 23 13 13 13"/><line x1="20" y1="6" x2="3.5" y2="20"/></svg>
+              </div>
+              <p class="module-name">Speed Test</p>
+              <p class="module-sub">Timed</p>
+            </button>
+
+            <button class="module-card" data-nav="achievements" style="--accent:#34D399;--glow:rgba(52,211,153,0.25)">
+              <div class="module-icon-wrap" style="background:rgba(52,211,153,0.14)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9L12 2l6 7M6 9h12M6 9l1.5 10.5c.2 1.5 1.5 2.5 3 2.5h3c1.5 0 2.8-1 3-2.5L18 9"/></svg>
+              </div>
+              <p class="module-name">Achievements</p>
+              <p class="module-sub">Milestones</p>
+            </button>
+          </div>
+        </div>
+
+        <div class="home-bottom-links">
+          <button class="bottom-link" data-nav="settings">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#7A7A88" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            Settings
+          </button>
+          <button class="bottom-link" data-nav="about" style="color:#22D3EE">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            About
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CALCULATOR SCREEN
+         ============================================ -->
+    <section id="page-calculator" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Calculator</h2>
+            <p class="header-subtitle">Basic</p>
+          </div>
+        </header>
+
+        <div class="calc-panel">
+          <div class="calc-display">
+            <p class="calc-expr" id="calc-expr"></p>
+            <p class="calc-result" id="calc-display">0</p>
+          </div>
+          <div class="calc-divider"></div>
+          <div class="calc-keypad" id="calc-keypad">
+            <!-- Generated by JS -->
+          </div>
+        </div>
+
+        <div class="calc-history" id="calc-history">
+          <div class="calc-history-header">
+            <p class="calc-history-label">RECENT</p>
+            <button class="calc-history-clear" id="calc-clear-history">Clear</button>
+          </div>
+          <div class="calc-history-list" id="calc-history-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SCIENTIFIC CALCULATOR SCREEN
+         ============================================ -->
+    <section id="page-scientific" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Scientific</h2>
+            <p class="header-subtitle">Advanced</p>
+          </div>
+        </header>
+
+        <div class="calc-panel sci-panel">
+          <div class="sci-display">
+            <p class="sci-memory" id="sci-memory"></p>
+            <p class="sci-expr" id="sci-expr"></p>
+            <p class="sci-result" id="sci-display">0</p>
+          </div>
+          <div class="calc-divider"></div>
+
+          <button class="sci-toggle" id="sci-toggle-btn">SHOW SCIENTIFIC</button>
+
+          <div class="sci-angle-modes" id="sci-angle-modes"></div>
+
+          <div class="sci-buttons" id="sci-buttons">
+            <!-- Generated by JS -->
+          </div>
+
+          <div class="calc-divider"></div>
+
+          <div class="calc-keypad" id="sci-keypad">
+            <!-- Generated by JS -->
+          </div>
+
+          <div class="sci-history" id="sci-history">
+            <div class="calc-history-header">
+              <p class="calc-history-label">RECENT</p>
+              <button class="calc-history-clear" id="sci-clear-history">Clear</button>
+            </div>
+            <div class="sci-history-list" id="sci-history-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         CONVERTER SCREEN
+         ============================================ -->
+    <section id="page-converter" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Converter</h2>
+            <p class="header-subtitle">Units</p>
+          </div>
+        </header>
+
+        <div class="conv-categories" id="conv-categories">
+          <!-- Generated by JS -->
+        </div>
+
+        <div class="conv-card">
+          <div class="conv-section">
+            <p class="conv-label">FROM</p>
+            <select id="conv-from" class="conv-select"></select>
+            <input type="text" id="conv-input" class="conv-input" value="1" data-numeric-input="true" data-allow-negative="true" inputmode="decimal" step="any" placeholder="Enter value">
+          </div>
+
+          <div class="conv-swap-wrap">
+            <button class="conv-swap-btn" id="conv-swap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0A0A0F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M7 10h14l-4-4"/><path d="M17 14H3l4 4"/></svg>
+            </button>
+          </div>
+
+          <div class="conv-section">
+            <p class="conv-label">TO</p>
+            <select id="conv-to" class="conv-select"></select>
+            <div class="conv-result" id="conv-result">—</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SCHOLAR TOOL SCREEN
+         ============================================ -->
+    <section id="page-scholar-tool" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Scholar Tool</h2>
+            <p class="header-subtitle">5-step formula solver</p>
+          </div>
+        </header>
+
+        <div class="scholar-progress" id="scholar-progress">
+          <!-- Generated by JS -->
+        </div>
+
+        <div id="scholar-step-content">
+          <!-- Generated by JS based on current step -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FORMULAS SCREEN
+         ============================================ -->
+    <section id="page-formulas" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Formulas</h2>
+            <p class="header-subtitle" id="formula-count">19 found</p>
+          </div>
+        </header>
+
+        <div class="formula-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7A7A88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="formula-search-input" placeholder="Search formulas, topics...">
+        </div>
+
+        <div class="formula-chips scrollbar-hide" id="formula-category-chips">
+          <!-- Generated by JS -->
+        </div>
+
+        <div class="formula-chips scrollbar-hide" id="formula-difficulty-chips">
+          <!-- Generated by JS -->
+        </div>
+
+        <div id="formula-list">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         TRICKS SCREEN
+         ============================================ -->
+    <section id="page-tricks" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Short Tricks</h2>
+            <p class="header-subtitle">Save time</p>
+          </div>
+        </header>
+
+        <div class="tricks-chips scrollbar-hide" id="tricks-chips">
+          <!-- Generated by JS -->
+        </div>
+
+        <div id="tricks-list">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         PRACTICE SCREEN
+         ============================================ -->
+    <section id="page-practice" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Practice</h2>
+            <p class="header-subtitle" id="practice-subtitle">MCQ Quiz</p>
+          </div>
+        </header>
+
+        <div id="practice-content">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         BUDDHIMATTA SCREEN
+         ============================================ -->
+    <section id="page-buddhimatta" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title" id="buddhi-title">BuddhiMatta</h2>
+            <p class="header-subtitle" id="buddhi-subtitle">IQ training</p>
+          </div>
+        </header>
+
+        <div id="buddhi-content">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SQUARES & CUBES SCREEN
+         ============================================ -->
+    <section id="page-squares-cubes" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Squares & Cubes</h2>
+            <p class="header-subtitle">Fast tricks · Reference table</p>
+          </div>
+        </header>
+
+        <div class="tab-toggle">
+          <button class="tab-btn tab-active" id="sq-tab-table" data-tab="table">Table</button>
+          <button class="tab-btn" id="sq-tab-tricks" data-tab="tricks">Tricks</button>
+        </div>
+
+        <div id="sq-content">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         GK REVISION SCREEN
+         ============================================ -->
+    <section id="page-gk-revision" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">GK Revision</h2>
+            <p class="header-subtitle">Important Days</p>
+          </div>
+        </header>
+
+        <div class="gk-chips scrollbar-hide" id="gk-chips">
+          <!-- Generated by JS -->
+        </div>
+
+        <div id="gk-list">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         MEMORY TRICKS SCREEN
+         ============================================ -->
+    <section id="page-memory-tricks" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Memory Tricks</h2>
+            <p class="header-subtitle">Mnemonics</p>
+          </div>
+        </header>
+
+        <div id="memory-list">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FAST REVISION SCREEN
+         ============================================ -->
+    <section id="page-fast-revision" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Fast Revision</h2>
+            <p class="header-subtitle">Quick 30-second review</p>
+          </div>
+        </header>
+
+        <p class="fast-rev-intro">All formulas at a glance — scroll through for a quick revision before the exam.</p>
+
+        <div id="fast-revision-list">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SETTINGS SCREEN
+         ============================================ -->
+    <section id="page-settings" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Settings</h2>
+            <p class="header-subtitle">Preferences</p>
+          </div>
+        </header>
+
+        <div id="settings-content">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SCREEN
+         ============================================ -->
+    <section id="page-about" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">About</h2>
+          </div>
+        </header>
+
+        <div id="about-content">
+          <!-- Generated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         PROGRESS DASHBOARD
+         ============================================ -->
+    <section id="page-progress-dashboard" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">Progress</h2>
+            <p class="header-subtitle">Your Journey</p>
+          </div>
+        </header>
+        <div id="progress-content"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         DAILY CHALLENGE
+         ============================================ -->
+    <section id="page-daily-challenge" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">🎯 Daily Challenge</h2>
+            <p class="header-subtitle" id="daily-challenge-subtitle"></p>
+          </div>
+        </header>
+        <div id="daily-challenge-content"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         WEAK TOPIC DETECTOR
+         ============================================ -->
+    <section id="page-weak-topics" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">📊 Weak Topics</h2>
+            <p class="header-subtitle">Performance Analysis</p>
+          </div>
+        </header>
+        <div id="weak-topics-content"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         EXAM MODE
+         ============================================ -->
+    <section id="page-exam-mode" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">📝 Exam Mode</h2>
+            <p class="header-subtitle" id="exam-subtitle"></p>
+          </div>
+        </header>
+        <div id="exam-content"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         QUESTION GENERATOR
+         ============================================ -->
+    <section id="page-question-generator" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">🔢 Question Generator</h2>
+            <p class="header-subtitle">Custom Practice</p>
+          </div>
+        </header>
+        <div id="question-gen-content"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         MISTAKE BOOK
+         ============================================ -->
+    <section id="page-mistake-book" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">❌ Mistake Book</h2>
+            <p class="header-subtitle" id="mistake-count">No mistakes yet</p>
+          </div>
+        </header>
+        <div id="mistake-book-content"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SPEED TEST
+         ============================================ -->
+    <section id="page-speed-test" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">⚡ Speed Test</h2>
+            <p class="header-subtitle">Timed Practice</p>
+          </div>
+        </header>
+        <div id="speed-test-content"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ACHIEVEMENTS
+         ============================================ -->
+    <section id="page-achievements" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="header-title-stack">
+            <h2 class="header-title">🏆 Achievements</h2>
+            <p class="header-subtitle">Your Milestones</p>
+          </div>
+        </header>
+        <div id="achievements-content"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         404 SCREEN
+         ============================================ -->
+    <section id="page-404" class="page">
+      <div class="page-inner">
+        <header class="screen-header">
+          <button class="back-btn" data-back="home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#B4B4C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+        </header>
+        <div style="text-align:center;padding:80px 20px">
+          <p style="font-size:64px;font-weight:900;color:#22D3EE">404</p>
+          <p style="font-size:16px;color:#B4B4C0;margin-top:8px">Page not found</p>
+          <button class="bottom-link" data-nav="home" style="margin-top:24px;color:#22D3EE;font-size:14px;font-weight:700">Go Home →</button>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /app -->
+
+  <script src="js/app.js"></script>
+</body>
+</html>
